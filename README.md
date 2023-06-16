@@ -1,38 +1,101 @@
-# create-svelte
+# Cashier frontend
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+--- 
 
-## Creating a project
+Single page application built in SvelteKit to manage establishment's parts that are a part of the cashier's responsibility
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Cashier frontend](#cashier-frontend)
+  - [Getting started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Getting up and running](#getting-up-and-running)
+      - [Environment variables](#environment-variables)
+      - [Build](#build)
+  - [Testing](#testing)
+  - [Contributing](#contributing)
+    - [Built with](#built-with)
+    - [Code style](#code-style)
+    - [License](#license)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Getting started
+
+### Prerequisites
+
+Things you need for this website to work:
+
+- [Node.js (18.x, 19.x) and npm](https://nodejs.org/)
+- [Menu API](https://github.com/eatn-dev/eatn_menu_api)
+- [Tables API](https://github.com/eatn-dev/eatn_tables_api)
+
+### Getting up and running
+
+This application is written in Node.js and is known to work in 18.x and 19.x versions. Other versions and distributions might probably run but are not guaranteed to work.
+
+Firstly, clone the repo:
+
+```sh
+git clone git@github.com:eatn-dev/eatn_menu_api.git
 ```
 
-## Developing
+After that, `cd` into the directory and install the dependencies:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+npm install
 ```
 
-## Building
+#### Environment variables
 
-To create a production version of your app:
+This application consumes data served by Menu API and Tables API that sit behind a **GATEWAY/PROXY**. Therefore, you need to create a `.env` file in project root directory that contains gateway url.
+
+```bash
+# .env
+GATEWAY_URL="http://eatn_proxy"
+```
+
+#### Build
+
+If you are running this inside a Docker container, next step would be to build the image.
+
+```sh
+docker compose build --no-cache
+```
+
+For development, run the following command:
+
+```sh
+npm run start
+```
+
+If you want to build/compile/bundle the website, you can do that by doing:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Testing
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+This website is integration tested therefore integration with extrenally hosted APIs is guaranteed.
+
+To run the tests and ensure the website behaves as intended, you can do that by running:
+
+```
+npm run test
+```
+
+## Contributing
+
+If you find a bug or want to request a feature, don't hesistate to go to [issue](https://github.com/eatn-dev/eatn_menu_api/issues) page and open a ticket!
+
+### Built with
+
+ - [Javascript]() - Language used to build 99.999999% of today's software
+- [SveleteKit](https://kit.svelte.dev/) - modern new-age web framework build on [Svelte](https://svelte.dev/) rendering library which boasts amazing performance and readability
+- Vite
+- 
+### Code style
+
+We use [eslint](https://eslint.org/) to enforce a coding style, so please follow it.
+
+### License
+
+This project is licensed under GNU AGPL v3. See the [LICESNSE](./LICENSE) for details.
