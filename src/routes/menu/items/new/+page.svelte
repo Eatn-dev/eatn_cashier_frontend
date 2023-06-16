@@ -10,6 +10,7 @@
     let selectedCategory
     let subcategories = []
 
+    // eslint-disable-next-line no-inner-declarations
     function handleCategoryChange() {
         subcategories = selectedCategory.subcategories ||  []
     }

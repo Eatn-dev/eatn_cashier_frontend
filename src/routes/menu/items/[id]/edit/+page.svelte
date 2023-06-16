@@ -12,6 +12,7 @@
 
     let selectedSubcategoryId = data.item.subcategory.id
 
+    // eslint-disable-next-line no-inner-declarations
     function handleCategoryChange() {
         subcategories = selectedCategory.subcategories ||  []
     }
