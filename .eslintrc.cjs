@@ -2,7 +2,7 @@ module.exports = {
 	root: true,
 	extends: ['eslint:recommended'],
 	plugins: ['svelte', 'testing-library', 'jest-dom'],
-	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
+	overrides: [{ files: ['*.svelte'], parser: "svelte-eslint-parser" }],
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020
