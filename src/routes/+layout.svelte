@@ -1,9 +1,9 @@
 <script>
-    import { page } from "$app/stores";
-    import { fade } from "svelte/transition";
-    import { beforeNavigate } from '$app/navigation';
+    import { page } from "$app/stores"
+    import { fade } from "svelte/transition"
+    import { beforeNavigate } from '$app/navigation'
     import { initFlash } from "sveltekit-flash-message/client"
-    
+
     const flash = initFlash(page)
     const flashTimeoutMs= 1500
 
