@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	extends: ['eslint:recommended'],
-	plugins: ['svelte3', 'testing-library', 'jest-dom'],
+	plugins: ['svelte', 'testing-library', 'jest-dom'],
 	overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
 	parserOptions: {
 		sourceType: 'module',
